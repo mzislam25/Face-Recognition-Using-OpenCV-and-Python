@@ -1,3 +1,4 @@
+import os
 import cv2
 import random
 import json
@@ -11,6 +12,9 @@ name=str(input('Your name Sir: \n'))
 ID=str(random.randint(0,999))
 i=0
 camera = cv2.VideoCapture(0)
+
+if not os.path.exists("train_data/dataset"):
+    os.makedirs("train_data/dataset")
 
 while True:
     ret, img = camera.read()
