@@ -4,7 +4,7 @@ import json
 
 data = {}
 data['people'] = []
-with open('log.txt', 'r') as json_file:  
+with open('train_data/log.txt', 'r') as json_file:  
     data = json.load(json_file)
 detector=cv2.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
 name=str(input('Your name Sir: \n'))
@@ -20,11 +20,11 @@ while True:
         for (x,y,w,h) in faces:
             i=i+1
             cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-            cv2.imwrite("dataSet/"+name+"."+ID+'.'+ str(i) + ".jpg", gray[y:y+h,x:x+w])
+            cv2.imwrite("train_data/dataset/"+name+"."+ID+'.'+ str(i) + ".jpg", gray[y:y+h,x:x+w])
         cv2.imshow('Camera',img)
         if cv2.waitKey(5) & 0xFF == ord('q'):
             break
-        if i > 20:
+        if i > 100:
             data['people'].append({  
                 'name': name,
                 'id': ID

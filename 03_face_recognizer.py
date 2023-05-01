@@ -1,12 +1,10 @@
 import cv2
-import numpy as np
-import math
 import json
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('train_data/trainner.yml')
 cascadePath = "haar/haarcascade_frontalface_default.xml"
-faceCascade = cv2.CascadeClassifier(cascadePath);
+faceCascade = cv2.CascadeClassifier(cascadePath)
 
 cam = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_SIMPLEX
