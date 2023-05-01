@@ -1,1 +1,1 @@
-{"people": [ {"id": "505", "name": "Zahir"}]}
+{"people": []}
